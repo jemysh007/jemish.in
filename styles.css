@@ -1,0 +1,318 @@
+/* 90s Retro Style */
+body {
+  background-color: #d3d3d3;
+  font-family: "MS Sans serif";
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  background-color: #000080;
+  color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-shadow: 2px 2px #000000;
+}
+
+h2 {
+  background-color: #4169e1; /* Royal Blue */
+  color: rgba(255, 255, 255, 0.69); /* Royal Blue */
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px #a9a9a9;
+}
+
+.section {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #000000;
+  background-color: #f8f8ff;
+  border-radius: 10px;
+  box-shadow: 5px 5px #a9a9a9;
+}
+
+.section h3 {
+  font-size: 24px;
+  background-color: #808080;
+  color: #ffffff;
+  padding: 10px;
+  border-bottom: 2px solid #000000;
+}
+
+p,
+ul li {
+  font-size: 18px;
+}
+
+ul {
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  list-style: circle;
+  max-width: 600px;
+}
+
+.lsn {
+  list-style: none;
+}
+
+ul li {
+  margin: 8px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0000ff;
+}
+
+a:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+.contact {
+  background-color: #add8e6;
+  padding: 20px;
+  border: 3px solid #4682b4;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.links a {
+  display: inline-block;
+  color: #4682b4;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 5px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  box-shadow: 3px 3px #a9a9a9;
+  transition: transform 0.2s ease-in-out;
+}
+
+.links a:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+}
+
+.links img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Retro Button Styling */
+.retro-button {
+  background-color: #e0e0e0;
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  box-shadow: 4px 4px #808080;
+  transition: background-color 0.2s ease;
+}
+
+.retro-button:hover {
+  background-color: #c0c0c0;
+}
+
+.retro-button:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+/* Adding a Windows 95/XP retro pattern */
+body::after {
+  content: "";
+  background: url("https://www.transparenttextures.com/patterns/grey-sandbag.png");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Animations */
+h1 {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.section {
+  animation: slideIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.education-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.education-item {
+  background-color: #f0f8ff; /* Alice blue background */
+  border: 2px dashed #87ceeb; /* Sky blue dashed border */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.education-item strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.education-item p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+.work-experiences {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.experience-item {
+  background-color: #f0f8ff; /* Light blue background */
+  border: 2px solid #87ceeb; /* Sky blue border */
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.experience-item strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.company {
+  display: block;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.company a {
+  color: #4682b4; /* Steel blue color for links */
+  text-decoration: none;
+}
+
+.company a:hover {
+  text-decoration: underline;
+}
+
+.details {
+  font-size: 16px;
+  color: #555555; /* Dark gray for additional details */
+}
+
+/* Common XP Theme Styles */
+.xp-style {
+  background-color: #c0c0c0; /* Light gray background */
+  border: 2px solid #000080; /* Navy border */
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-family: "MS Sans Serif", Geneva, sans-serif; /* XP-like font */
+  color: #000000; /* Black text */
+}
+
+.xp-style h3 {
+  background-color: #000080; /* Navy background for headers */
+  color: #ffffff; /* White text */
+  padding: 10px;
+  border-bottom: 2px solid #c0c0c0; /* Light gray border at bottom */
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.experience-item,
+.education-item {
+  background-color: #ffffff; /* White background for items */
+  border: 1px solid #000080; /* Navy border */
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.experience-item strong,
+.education-item strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.company a {
+  color: #0000ff; /* Blue links */
+  text-decoration: none;
+}
+
+.company a:hover {
+  text-decoration: underline;
+}
+
+.details {
+  font-size: 14px;
+  color: #000000; /* Black text */
+}
+.container {
+  max-width: 1200px; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 20px; /* Optional padding */
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .links a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    padding: 20px;
+  }
+}
