@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            :root {
+                --bs-light: -2px -2px 2px 0px #E0EAF9;
+                --bs-dark: 2px 2px 2px 0px #A2AAB8;
+                --bs-light-inverse: inset -2px -2px 2px 0px #E0EAF9;
+                --bs-dark-inverse: inset 2px 2px 2px 0px #A2AAB8;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: #cad2df;
+                font-family: cursive;
+            }
+
+            table {
+                border-radius: 15px;
+                box-shadow: var(--bs-light), var(--bs-dark);
+                padding: 8px;
+            }
+
+            tbody {
+                margin: 20px;
+            }
+
+            .centered {
+                max-width: 100%;
+                height: auto;
+            }
+
+            tr {
+                padding: 20px;
+                text-align: center;
+            }
+
+            td {
+                padding: 8px 5px;
+            }
+
+            button {
+                width: 50px;
+                height: 50px;
+                padding: 14px;
+                background: #cad2df;
+                border: none;
+                color: #00000073;
+                font-size: 22px;
+                font-weight: bolder;
+                border-radius: 5px;
+                border-radius: 10px;
+                box-shadow: var(--bs-light), var(--bs-dark);
+            }
+
+            button:active {
+                box-shadow: var(--bs-dark-inverse), var(--bs-light-inverse);
+                padding: 2px 2px 0px 0px;
+            }
+
+            .odd-button {
+                height: 100px;
+            }
+
+            .text-right {
+                text-align: right;
+            }
+
+            .input {
+                border-radius: 15px;
+                margin: 10px;
+                padding: 10px 5px;
+                box-shadow: var(--bs-dark-inverse), var(--bs-light-inverse);
+                overflow-x: auto;
+            }
+
+            .p1 {
+                font-size: 28px;
+                margin: 0;
+                color: #0000009e;
+                text-align: right;
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+
+            .p2 {
+                font-size: 18px;
+                margin: 0;
+                color: #00000073;
+                text-align: right;
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+        </style>
+
+
+    </head>
+    <body>
+
+        <div class="centered">
+            <table>
+
+                <tbody>
+
+                    <th colspan="4">
+                        <div class="input text-right">
+                            <input type="text" id="p1" class="p1" value="0" />
+                            <p id="p2" class="p2">0</p>
+                        </div>
+                        </tr>
+
+                        <tr>
+                            <td><button onclick="press('C')">C</button></td>
+                            <td><button onclick="press('/')">/</button></td>
+                            <td><button onclick="press('%')">%</button></td>
+                            <td><button onclick="press('X')">X</button></td>
+                        </tr>
+
+                        <tr>
+                            <td><button onclick="press('7')">7</button></td>
+                            <td><button onclick="press('8')">8</button></td>
+                            <td><button onclick="press('9')">9</button></td>
+                            <td><button onclick="press('-')">-</button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="press('4')">4</button></td>
+                            <td><button onclick="press('5')">5</button></td>
+                            <td><button onclick="press('6')">6</button></td>
+                            <td rowspan="2"><button onclick="press('+')"
+                                    class="odd-button">+</button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="press('1')">1</button></td>
+                            <td><button onclick="press('2')">2</button></td>
+                            <td><button onclick="press('3')">3</button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="press('0')">0</button></td>
+                            <td><button onclick="press('.')">.</button></td>
+                            <td><button onclick="press('PM')">+/-</button></td>
+                            <td><button onclick="press('=')">=</button></td>
+                        </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+
+            var input1 = document.getElementById('p1')
+            var input2 = document.getElementById('p2')
+            function press(key) {
+
+                if (input1.value == "0" || input1.value == "INVALID !!!") {
+                    input1.value = '';
+                }
+
+                console.log(key)
+
+                if (key == "=") {
+
+                    calc(input1, input2);
+
+                } else if (key == "PM") {
+                    input1.value += input1.value.startsWith('-') ? input1.value.slice(1) : "-" + input1.value;
+                } else if (key == 'C') {
+                    input1.value = "0"
+                    input2.value = "0"
+                } else {
+                    input1.value += key
+                }
+
+            }
+
+            function filterInput(input = "") {
+                return input = input.replace("X", "*")
+            }
+
+            function calc(input1, input2) {
+
+                try {
+                    input = input1.value;
+                    input2.value = input;
+                    input1.value = eval(filterInput(input));
+                } catch (error) {
+                    input2.value = "";
+                    input1.value = "INVALID !!!"
+
+                }
+
+
+            }
+        </script>
+
+    </body>
+</html>
